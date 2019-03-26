@@ -68,9 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HtmlPage1.html" />
+    <Content Include="index.html" />
+    <Content Include="primjer_forme.html" />
+    <Content Include="prmjer_webform.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="prmjer_webform.aspx.cs">
+      <DependentUpon>prmjer_webform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="prmjer_webform.aspx.designer.cs">
+      <DependentUpon>prmjer_webform.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
