@@ -13,6 +13,7 @@ namespace HelloWorld.Controllers
         {
             string model = "Pozdrav svijete";
             return View((object)model);
+
         }
     }
 }
