@@ -18,7 +18,6 @@ namespace HelloWorld.Controllers
         {
             string[] lista = new string[] { "Skije", "Pancerice", "Naocale", "Kape", "Stapovi" };
             ViewBag.Lista = lista;
-            // return Veew()
             return View();
         } 
     }
