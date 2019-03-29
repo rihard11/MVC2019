@@ -1,0 +1,28 @@
+﻿@model HelloWorld.Models.Osoba
+@{
+    ViewBag.Title = "PrikaziOsobu";
+    string datumRod = Model.DatumRodjenja == null ? "" :
+        ((DateTime)Model.DatumRodjenja).ToString("dd.MM.yyyy");
+}
+
+<h2>PrikaziOsobu</h2>
+
+<div>
+    <form action="Osobe/PrikaziOsobu" method="post">
+        <div>
+            <label>Ime: @Model.Ime</label>
+        </div>
+        <div>
+            <label>Prezime: @Model.Prezime</label>
+        </div>
+        <div>
+            <label>Email: @Model.Email</label>
+        </div>
+        <div>
+            <label>Datum rođenja: @datumRod</label>
+        </div>
+        <div>
+            <a href="/Osobe/PopuniOsobu">Natrag</a>
+        </div>
+    </form>
+</div>
