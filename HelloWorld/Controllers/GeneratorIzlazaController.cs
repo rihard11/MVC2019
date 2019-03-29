@@ -16,7 +16,9 @@ namespace HelloWorld.Controllers
         // GET: GeneratorIzlaza/ListaArtikala
         public ActionResult ListaArtikala()
         {
-
+            string[] lista = new string[] { "Skije", "Pancerice", "Naocale", "Kape", "Stapovi" };
+            ViewBag.Lista = lista;
+            return View();
         } 
     }
 }

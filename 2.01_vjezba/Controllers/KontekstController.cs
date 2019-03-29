@@ -8,13 +8,14 @@ namespace _2._01_vjezba.Controllers
 {
     public class KontekstController : Controller
     {
-        // GET: Kontekst
+        // GET: Kontekst/Index
         public string Index()
         {
             // return View();
             string poruka = "Danas je: " + DateTime.Now.ToLongDateString();
             return poruka;
-        }  
+        }
+        // GET: Kontekst/QuerryPodeci
         public string QuerryPodaci ()
         {
             if (Request.QueryString["Ime"] == null || Request.QueryString["Prezime"] == null)
@@ -29,6 +30,8 @@ namespace _2._01_vjezba.Controllers
                 return string.Format("<p>Ime i prezime iz query stringa su: {0}</p>", textSaStilom);
             }
         }
+
+        // GET: Kontekst/RoutePodaci
         public string RoutePodaci()
         {
             try
