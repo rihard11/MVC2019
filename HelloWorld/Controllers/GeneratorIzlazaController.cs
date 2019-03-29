@@ -19,6 +19,29 @@ namespace HelloWorld.Controllers
             string[] lista = new string[] { "Skije", "Pancerice", "Naocale", "Kape", "Stapovi" };
             ViewBag.Lista = lista;
             return View();
-        } 
+        }
+
+        // GeneratorIzlaza/RedirectNaMetodu/Kosarica
+        public ActionResult RedirectNaMetodu(string id)
+        {
+            if (id == "Kosarica")
+            {
+                return RedirectToAction("PopisKosarice");
+            }
+            // GeneratorIzlaza/RedirectNaMetodu/hello
+            else if (id == "hello")
+            {
+                return RedirectToAction("Index", "PozdravSvijete");
+            }
+            else if (id == "2")
+            {
+                return RedirectToAction("Kvadriraj", "Home1Controller", new {id = id });
+            }
+            // GeneratorIzlaza/RedirectNaMetodu/ListaArtikala
+            else
+            {
+                return RedirectToAction("ListaArtikala");
+            }
+        }
     }
 }

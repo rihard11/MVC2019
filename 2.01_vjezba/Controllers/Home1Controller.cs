@@ -15,5 +15,9 @@ namespace _2._01_vjezba.Controllers
             return View((object)message);
 
         }
+        public string Kvadriraj(int id)
+        {
+            return (id * id).ToString();
+        }
     }
 }
