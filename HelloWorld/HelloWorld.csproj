@@ -197,6 +197,7 @@
     <Content Include="Views\SimpleBind\SimpleBindMetoda.cshtml" />
     <Content Include="Views\Osobe\PopuniOsobu.cshtml" />
     <Content Include="Views\Osobe\PrikaziOsobu.cshtml" />
+    <Content Include="Views\GeneratorIzlaza\PopisKosarice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
