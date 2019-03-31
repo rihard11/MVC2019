@@ -128,10 +128,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BrojGodinaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NaruciArtikalController.cs" />
     <Compile Include="Controllers\TocanOdgovorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Artikl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +174,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BrojGodina\RacunajBrojGodina.cshtml" />
     <Content Include="Views\TocanOdgovor\ProvjeriOdgovor.cshtml" />
+    <Content Include="Views\NaruciArtikal\NaruciArtikal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
