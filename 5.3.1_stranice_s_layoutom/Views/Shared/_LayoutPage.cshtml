@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <img src="~/slike/algebra.jpeg" alt="Algebra logo" />
+    </div>
+    <div>
+        <a href="/LayoutSection/Stranica1">Stranica 1</a> | 
+        <a href="/LayoutSection/Stranica2">Stranica 2</a>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <div>
+        @RenderSection("Detalji", false)
+    </div>
+</body>
+</html>
