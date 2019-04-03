@@ -1,0 +1,44 @@
+﻿@model Zadaca_4._1._vj.Models.Osoba
+@{
+    ViewBag.Title = "FormHelper";
+}
+
+<h2>FormHelper</h2>
+@foreach (var item in ViewBag.Mjesta)
+{
+    @item
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        <label for="Ime">Ime:</label>
+        @Html.TextBox("Ime", Model.Ime)
+    </div>
+    <div>
+        <label for="Prezime">Prezime:</label>
+        @Html.TextBox("Prezime", Model.Prezime)
+    </div>
+    <div>
+        <label for="Email">Email:</label>
+        @Html.TextBox("Email", Model.Email)
+    </div>
+    <div>
+        <label for="MjestoStanovanja">Mjesto stanovanja:</label>
+        @Html.DropDownList("MjestoStanovanja", new SelectList((string[])ViewBag.Mjesta), "--Odaberi--")
+    </div>
+    <div>
+        <label for="Spol">Spol:</label>
+        @Html.RadioButton("Spol", "M", true); Muško <br />
+        @Html.RadioButton("Spol", "Z", false); Žensko <br />
+    </div>
+    <div>
+        <label for="Zaposlen">Zaposlen:</label>
+        @Html.CheckBox("Zaposlen", true); <br />
+    </div>
+    <input type="submit" name="name" value="Pošalji" />
+}
+
+<p>
+    <label  style="color: red;">@ViewBag.Poruka</label>
+</p>
