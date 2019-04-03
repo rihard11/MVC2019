@@ -20,16 +20,16 @@ namespace Zadaca_4._1._vj.Controllers
             "Split", "Osijek", "Zadar", "Rijeka"
         };
 
-        public ViewResult FormHelper()
+        public ViewResult StrongTypedFormHelper()
         {
             ViewBag.Mjesta = this.mjesta;
             return View(new Osoba());
         }
         [HttpPost]
-        public ViewResult FormHelper(Osoba osoba)
+        public ViewResult StrongTypedFormHelper(Osoba osoba)
         {
             ViewBag.Mjesta = this.mjesta;
-            ViewBag.Poruka = "BlaBla";
+            ViewBag.Poruka = "Unešeni su podaci";
             return View(new Osoba());
         }
     }
