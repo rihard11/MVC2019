@@ -132,6 +132,7 @@
     <Compile Include="Controllers\HtmlHelperiController.cs" />
     <Compile Include="Controllers\NaruciArtikalController.cs" />
     <Compile Include="Controllers\ParcijalniPogledController.cs" />
+    <Compile Include="Controllers\PrikazSaChildAkcijomController.cs" />
     <Compile Include="Controllers\TocanOdgovorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +187,7 @@
     <Content Include="Views\HtmlHelperi\Index.cshtml" />
     <Content Include="Views\HtmlHelperi\FormHelper.cshtml" />
     <Content Include="Views\HtmlHelperi\StrongTypedFormHelper.cshtml" />
+    <Content Include="Views\PrikazSaChildAkcijom\ObradiListu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

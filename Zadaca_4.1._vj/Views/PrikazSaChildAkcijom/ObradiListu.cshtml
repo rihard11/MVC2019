@@ -1,0 +1,57 @@
+﻿@using Zadaca_4._1._vj.Models
+@model List<Artikl>
+@{
+    ViewBag.Title = "ObradiListu";
+}
+
+<h2>ObradiListu</h2>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+    }
+
+    #tbl tr:nth-child(even) {
+        background-color: #b4eeb6;
+    }
+
+    #tbl tr:nth-child(odd) {
+        background-color: #82b483;
+    }
+
+    #tbl th {
+        background-color: firebrick;
+        color: gold;
+        text-align: center;
+    }
+
+    #tbl td:last-child {
+        text-align: right;
+    }
+    td {
+        font-weight: 800;
+    }
+</style>
+
+<div>
+    <table id="tbl">
+        <caption>Lista Artikala</caption>
+        <tr>
+            <th>Naziv</th>
+            <th>Cijena</th>
+            <th>Kategorija</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.Cijena</td>
+                <td>@Html.Action("OdrediKategoriju", item)</td>
+            </tr>
+        }
+    </table>
+</div>
