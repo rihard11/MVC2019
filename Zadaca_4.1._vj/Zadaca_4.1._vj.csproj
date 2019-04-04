@@ -130,6 +130,7 @@
     <Compile Include="Controllers\ChildActionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HtmlHelperiController.cs" />
+    <Compile Include="Controllers\ListaArtikalaController.cs" />
     <Compile Include="Controllers\NaruciArtikalController.cs" />
     <Compile Include="Controllers\ParcijalniPogledController.cs" />
     <Compile Include="Controllers\PrikazSaChildAkcijomController.cs" />
@@ -188,6 +189,8 @@
     <Content Include="Views\HtmlHelperi\FormHelper.cshtml" />
     <Content Include="Views\HtmlHelperi\StrongTypedFormHelper.cshtml" />
     <Content Include="Views\PrikazSaChildAkcijom\ObradiListu.cshtml" />
+    <Content Include="Views\ListaArtikala\UnesiArtikl.cshtml" />
+    <Content Include="Views\ListaArtikala\DodajArtikl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
