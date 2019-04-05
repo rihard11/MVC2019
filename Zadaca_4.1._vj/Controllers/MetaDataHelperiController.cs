@@ -10,13 +10,13 @@ namespace Zadaca_4._1._vj.Controllers
     public class MetaDataHelperiController : Controller
     {
         // GET: MetaDataHelperi
-        public ViewResult Index()
+        public ViewResult  MetaDataView()
         {
             return View(new OsobaMeta());
         }
 
         [HttpPost]
-        public ViewResult Index(OsobaMeta osoba)
+        public ViewResult MetaDataView(OsobaMeta osoba)
         {
             return View("HtmlLabelDisplay", osoba);
         }
