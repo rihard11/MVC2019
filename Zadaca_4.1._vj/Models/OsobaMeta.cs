@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Zadaca_4._1._vj.Models
 {
+    [DisplayName("Osoba")]
     public class OsobaMeta
     {
         [HiddenInput(DisplayValue=false)]

@@ -3,14 +3,41 @@
     ViewBag.Title = "MetaDataView";
 }
 
+<style>
+        label {
+            display: inline-block;
+            width: 150px;
+            margin: 10px;
+        }
+        .column {
+            float: left;
+            margin: 10px;
+        }
+        input[type=submit] {
+            float: left;
+            clear: both;
+            margin-top: 10px;
+        }
+        .editor-label {
+            clear: left;
+            float: left;
+            margin-top: 10px;
+        }
+        .editor-field {
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+ </style>
+
 <h2>@Html.LabelForModel()</h2>
 <div>
     @using (Html.BeginForm())
     {
-        <div>
+        <div class="column">
             @Html.EditorForModel()
         </div>
-        <div>
+        <div class="column">
             @Html.EditorFor(x => x.AdresaOsobe)
         </div>
         <input type="submit" value="Posalji" />

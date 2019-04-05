@@ -201,6 +201,8 @@
     <Content Include="Views\TemplHtmlHelperi\EditorModelView.cshtml" />
     <Content Include="Views\MetaDataHelperi\MetaDataView.cshtml" />
     <Content Include="Views\MetaDataHelperi\HtmlLabelDisplay.cshtml" />
+    <Content Include="Views\MetaDataHelperi\EditorTemplates\TemplSpol.cshtml" />
+    <Content Include="Views\MetaDataHelperi\EditorTemplates\TemplMjesta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -18,7 +18,7 @@ namespace Zadaca_4._1._vj.Controllers
         [HttpPost]
         public ViewResult Index(OsobaMeta osoba)
         {
-            return View("~/Views/TemplHtmlHelperi/HtmlLabelDisplay.cshtml", osoba);
+            return View("HtmlLabelDisplay", osoba);
         }
     }
 }
