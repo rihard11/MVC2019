@@ -10,12 +10,32 @@ namespace Validacije.Controllers
     public class ValidacijeController : Controller
     {
         // GET: Validacije
+        public ViewResult MetaIzdavanjeRacuna()
+        {
+            return View(new MetaRacun() { Datum = DateTime.Now, BrojRacuna = "/" + DateTime.Now.Year.ToString() });
+        }
+        [HttpPost]
+        public ViewResult MetaIzdavanjeRacuna(MetaRacun metaRacun)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("MetaRacunIzdan", metaRacun);
+            }
+            else
+            {
+                return View();
+            }
+        }
         public ViewResult IzdavanjeRacuna()
         {
             return View(new Racun() { Datum = DateTime.Now, BrojRacuna = "/" + DateTime.Now.Year.ToString() });
         }
+        public ViewResult IzdavanjeRacuna2()
+        {
+            return View(new Racun() { Datum = DateTime.Now, BrojRacuna = "/" + DateTime.Now.Year.ToString() });
+        }
         [HttpPost]
-        public ViewResult IzdavanjeRacuna(Racun racun)
+        public ViewResult IzdavanjeRacuna(Racun racun, string id)
         {
             if (string.IsNullOrEmpty(racun.BrojRacuna))
             {
@@ -43,7 +63,15 @@ namespace Validacije.Controllers
             }
             else
             {
-                return View();
+                if (id == "IzdavanjeRacuna2")
+                {
+                    return View("IzdavanjeRacuna2");
+                }
+                else
+                {
+                    return View();
+                }
+
             }
         }
     }

@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -146,7 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MetaRacun.cs" />
     <Compile Include="Models\Racun.cs" />
+    <Compile Include="Models\Validacije\NeViseOdTriDanaAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +191,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Validacije\IzdavanjeRacuna.cshtml" />
     <Content Include="Views\Validacije\RacunIzdan.cshtml" />
+    <Content Include="Views\Validacije\IzdavanjeRacuna2.cshtml" />
+    <Content Include="Views\Validacije\MetaRacunIzdan.cshtml" />
+    <Content Include="Views\Validacije\MetaIzdavanjeRacuna.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

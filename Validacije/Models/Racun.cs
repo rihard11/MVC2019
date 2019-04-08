@@ -11,6 +11,6 @@ namespace Validacije.Models
         public DateTime Datum { get; set; }
         public string Zaposlenik { get; set; }
         public string Kupac { get; set; }
-        public decimal Cijana { get; set; }
+        public decimal Cijena { get; set; }
     }
 }

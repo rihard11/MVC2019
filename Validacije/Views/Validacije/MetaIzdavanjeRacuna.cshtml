@@ -1,6 +1,6 @@
-﻿@model Validacije.Models.Racun
+﻿@model Validacije.Models.MetaRacun
 @{
-    ViewBag.Title = "Izdavanje racuna";
+    ViewBag.Title = "Izdavanje racuna 2";
     Html.EnableClientValidation(false);
 }
 
@@ -13,30 +13,35 @@
     }
 </style>
 
-@Html.ValidationSummary()
+
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary()
     <div>
         @Html.LabelFor(x => x.BrojRacuna)
         @Html.EditorFor(x => x.BrojRacuna)
+        @Html.ValidationMessageFor(x => x.BrojRacuna)
     </div>
     <div>
         @Html.LabelFor(x => x.Datum)
         @Html.EditorFor(x => x.Datum)
+        @Html.ValidationMessageFor(x => x.Datum)
     </div>
     <div>
         @Html.LabelFor(x => x.Zaposlenik)
         @Html.EditorFor(x => x.Zaposlenik)
+        @Html.ValidationMessageFor(x => x.Zaposlenik)
     </div>
     <div>
         @Html.LabelFor(x => x.Kupac)
         @Html.EditorFor(x => x.Kupac)
+        @Html.ValidationMessageFor(x => x.Kupac)
     </div>
     <div>
         @Html.LabelFor(x => x.Cijena)
         @Html.EditorFor(x => x.Cijena)
+        @Html.ValidationMessageFor(x => x.Cijena)
 
     </div>
-
     <input type="submit" value="Pošalji" />
 }
