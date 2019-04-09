@@ -49,7 +49,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
         {
             // Prvo kreiramo conn vezu
             // string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=dbAlgebra;Integrated Security=True";
-            string connString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["dbAlgebraCo"].ConnectionString;
             // Nakon toga instanca Sqlconnection
             SqlConnection conn = new SqlConnection(connString);
 
