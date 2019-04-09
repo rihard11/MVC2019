@@ -45,11 +45,13 @@ namespace ado_net_spajanje_na_bazu.Controllers
 
             return View();
         }
+
+        // GET: SqlConnectionObjekt preko WEB.config
         public ActionResult SpojPrekoWebKonfiga()
         {
             // Prvo kreiramo conn vezu
             // string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=dbAlgebra;Integrated Security=True";
-            string connString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["dbAlgebraConnString"].ConnectionString;
             // Nakon toga instanca Sqlconnection
             SqlConnection conn = new SqlConnection(connString);
 
