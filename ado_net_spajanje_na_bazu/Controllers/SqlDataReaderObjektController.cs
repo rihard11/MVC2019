@@ -19,7 +19,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
 
             string connString = ConfigurationManager.ConnectionStrings["dbAlgebraConnString"].ConnectionString;
 
-            // Prazna nista tecajeva
+            // Prazna lista tecajeva
             List<Tecaj> lstTecaj = new List<Tecaj>();
 
             // Nakon toga instanca Sqlconnection
@@ -48,6 +48,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
 
                         lstTecaj.Add(t1);
                     }
+                    ViewBag.Message = "Zapis je izmjenjen u bazi";
                 }
                 else
                 {

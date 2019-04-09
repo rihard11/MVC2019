@@ -46,6 +46,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
             }
             return View();
         }
+
         public ActionResult Edit()
         {
             // Prvo kreiramo conn vezu
@@ -56,7 +57,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
             // Nakon toga instanca Sqlconnection
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                string cmdTxt = "";
+                string cmdTxt = "UPDATE tblTecajevi";
                 cmdTxt += "UPDATE [dbo].[tbltecajevi] "
                     + " SET "
                     + "[naziv] = 'Web Dev',"
@@ -79,6 +80,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
             }
             return View("Index");
         }
+
         public ActionResult Delete()
         {
             // Prvo kreiramo conn vezu
@@ -89,7 +91,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
             // Nakon toga instanca Sqlconnection
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                string cmdTxt = "";
+                string cmdTxt = "DELETE from tblTecajevi";
                 cmdTxt += "DELETE FROM [dbo].[tbltecajevi] "
                     + " WHERE [dbo].[tbltecajevi].id=2";
 
@@ -104,11 +106,12 @@ namespace ado_net_spajanje_na_bazu.Controllers
                 }
                 else
                 {
-                    ViewBag.Message = "Zapis je obrisan ili nije pronadjen u bazi";
+                    ViewBag.Message = "Zapis nije obrisan";
                 }
             }
             return View("Index");
         }
+
         public ActionResult Count()
         {
             // Prvo kreiramo conn vezu
