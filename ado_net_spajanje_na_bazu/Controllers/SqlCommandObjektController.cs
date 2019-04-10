@@ -59,7 +59,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
                 cmdTxt += "UPDATE [dbo].[tbltecajevi] " +
                     "   SET " + "[naziv] = 'Web Dev'," +
                     "[opis] = 'Web development' " +
-                    "WHERE [dbo].[tbltecajevi].[idTecaj]=1";
+                    "WHERE [dbo].[tbltecajevi].[id]=1";
 
                 SqlCommand cmd = new SqlCommand(cmdTxt, conn);
                 cmd.Connection.Open();
@@ -91,7 +91,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
             {
                 string cmdTxt = "";
                 cmdTxt += "DELETE FROM [dbo].[tbltecajevi] " +
-                    "WHERE [dbo].[tbltecajevi].[idTecaj]=2";
+                    "WHERE [dbo].[tbltecajevi].[id]=2";
 
                 SqlCommand cmd = new SqlCommand(cmdTxt, conn);
                 cmd.Connection.Open();
