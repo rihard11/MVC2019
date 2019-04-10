@@ -42,7 +42,7 @@ namespace ado_net_spajanje_na_bazu.Controllers
                     {
                         Tecaj t1 = new Tecaj();
 
-                        t1.Id = (int)reader["id"];
+                        t1.Id = (int)reader["idTecaj"];
                         t1.Naziv = (string)reader["naziv"];
                         t1.Opis = (string)reader["opis"];
 
