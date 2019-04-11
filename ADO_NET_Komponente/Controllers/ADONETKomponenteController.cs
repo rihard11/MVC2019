@@ -12,8 +12,9 @@ namespace ADO_NET_Komponente.Controllers
 {
     public class ADONETKomponenteController : Controller
     {
-        string connStr = ConfigurationManager.ConnectionStrings["dbAlgebraConnStrSQL"].ConnectionString;
-        // GET: ADOKomponente
+        string connStr = ConfigurationManager.ConnectionStrings["dbAlgebraConnString"].ConnectionString;
+
+        // GET: ADONETKomponente
         public ActionResult List()
         {
             SqlConnection conn = new SqlConnection(connStr);
@@ -28,35 +29,32 @@ namespace ADO_NET_Komponente.Controllers
             try
             {
                 conn.Open();
-                // Ovdje smo još mogli provjeriti jeli veza otvorena
 
                 dr = cm.ExecuteReader();
 
-                // Provjerimo da li DataReader uopće postoji
+                //provjeravamo dal DataReader postoji
                 if (dr != null)
                 {
-                    // Ako postoji provjeri da li postoje redovi
-                    // koji bi se mogli pročitati
+                    // ako postoji provjeri dal ima redova za pročitati
                     if (dr.HasRows)
                     {
                         while (dr.Read())
                         {
-                            // Kreiramo novi PolaznikModel objekt, inicijaliziramo ga i dodajemo na listu lstPolaznici
+                            // kreiramo novi objekt PolaznikModel i dodajemo ga u listu lstPolaznici
                             PolaznikModel polaznik = new PolaznikModel();
-                            int.Parse(dr["IdPolaznik"].ToString());
+                            polaznik.IdPolaznik = int.Parse(dr["IdPolaznik"].ToString());
                             polaznik.Ime = dr["Ime"].ToString();
                             polaznik.Prezime = dr["Prezime"].ToString();
                             polaznik.Email = dr["Email"].ToString();
-                            polaznik.DatumRodjenja = DateTime.Parse(dr["DatumRodjenja"].ToString());
                             lstPolaznici.Add(polaznik);
                         }
                     }
+
                 }
             }
             catch (Exception ex)
             {
-                ViewBag.Message = "Greška kod dohvaćanja popisa polaznika! Opis: " + ex.Message;
-
+                ViewBag.Message = "Greška kod dohvaćanja polaznika!. Opis: " + ex.ToString();
             }
             finally
             {
@@ -74,18 +72,16 @@ namespace ADO_NET_Komponente.Controllers
             return View(lstPolaznici);
         }
 
-        [HttpGet]
+        // GET: ADONETKomponente
+        //[HttpGet]
         public ActionResult Details(int idPolaznik)
         {
             SqlConnection conn = new SqlConnection(connStr);
 
-            // Kreiramo SQL naredbu
-            string cmdText = "SELECT * FROM tblPolaznici WHERE IdPolaznik=@IdPolaznik";
+            string cmdText = "SELECT * FROM tblPolaznici WHERE IdPolaznik = @IdPolaznik";
 
-            // Kreiramo SqlCommand objekt
             SqlCommand cmd = new SqlCommand(cmdText, conn);
 
-            // Kreiramo SqlParameter objekt
             SqlParameter param = new SqlParameter();
             param.ParameterName = "@IdPolaznik";
             param.DbType = DbType.Int32;
@@ -110,8 +106,6 @@ namespace ADO_NET_Komponente.Controllers
                             polaznik.Ime = dr["Ime"].ToString();
                             polaznik.Prezime = dr["Prezime"].ToString();
                             polaznik.Email = dr["Email"].ToString();
-                            polaznik.DatumRodjenja = DateTime.Parse(dr["DatumRodjenja"].ToString());
-
                         }
                     }
                 }
@@ -136,60 +130,53 @@ namespace ADO_NET_Komponente.Controllers
             return View(polaznik);
         }
 
+        // GET: ADONETKomponente
         [HttpGet]
         public ActionResult Create()
         {
             return View(new PolaznikModel());
-
         }
 
+        // POST: ADONETKomponente
         [HttpPost]
         public ActionResult Create(PolaznikModel model)
         {
-            string connStr = ConfigurationManager.ConnectionStrings["dbAlgebraConnStrSQL"].ConnectionString;
             try
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    // Kreiramo SQL naredbu za upis u bazu
-                    string cmdText = "";
-                    cmdText += "INSERT INTO tblPolaznici ";
-                    cmdText += "(Ime, Prezime, Email, DatumRodjenja) ";
-                    cmdText += "VALUES ";
-                    cmdText += "('" + model.Ime + "', '" + model.Prezime + "', '" + model.Email + "', " + model.DatumRodjenja.ToString("yyyy-MM-dd") + ") ";
-
-                    // Kreiramo Command objekt i otvaramo vezu s bazom
+                    string cmdText = "INSERT INTO tblPolaznici (Ime, Prezime, Email) VALUES ('" +
+                        model.Ime + "', '" + model.Prezime + "', '" + model.Email + "') ";
                     SqlCommand cmd = new SqlCommand(cmdText, conn);
                     cmd.Connection.Open();
 
                     int brojDodanihRedaka = cmd.ExecuteNonQuery();
-                    ViewBag.Message = "Broj dodanih redaka: " + brojDodanihRedaka;
+                    ViewBag.Message = "Broj dodanih redaka : " + brojDodanihRedaka;
                 }
             }
             catch (Exception ex)
             {
-                ViewBag.Message = "Greška kod upisa polaznika! Opis: " + ex.Message;
+                ViewBag.Message = "Greška kod opisa polaznika! Opis: " + ex.ToString();
             }
             return View(model);
         }
-
-        [HttpGet]
+        // GET: ADONETKomponente
+        //[HttpGet]
         public ActionResult Edit(int idPolaznik)
         {
             SqlConnection conn = new SqlConnection(connStr);
 
-            // Kreiramo SQL naredbu
-            string cmdText = "SELECT * FROM tblPolaznici WHERE IdPolaznik=@IdPolaznik";
-            // Kreiramo SqlCommand objekt
+            string cmdText = "SELECT * FROM tblPolaznici WHERE IdPolaznik = @IdPolaznik";
+
             SqlCommand cmd = new SqlCommand(cmdText, conn);
 
-            // kreiramo sqlparameter objekt
             SqlParameter param = new SqlParameter();
             param.ParameterName = "@IdPolaznik";
             param.DbType = DbType.Int32;
             param.Direction = ParameterDirection.Input;
             param.Value = idPolaznik;
             cmd.Parameters.Add(param);
+
             SqlDataReader dr = null;
             PolaznikModel polaznik = new PolaznikModel();
 
@@ -207,7 +194,6 @@ namespace ADO_NET_Komponente.Controllers
                             polaznik.Ime = dr["Ime"].ToString();
                             polaznik.Prezime = dr["Prezime"].ToString();
                             polaznik.Email = dr["Email"].ToString();
-                            polaznik.DatumRodjenja = DateTime.Parse(dr["DatumRodjenja"].ToString());
                         }
                     }
                 }
@@ -225,14 +211,13 @@ namespace ADO_NET_Komponente.Controllers
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
-
                 }
                 conn.Dispose();
                 cmd.Dispose();
             }
             return View(polaznik);
         }
-
+        // GET: ADONETKomponente
         [HttpPost]
         public ActionResult Edit(PolaznikModel model)
         {
@@ -240,18 +225,10 @@ namespace ADO_NET_Komponente.Controllers
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    // Kreiramo SQL naredbu
-                    string cmdText = "";
-                    cmdText += "UPDATE tblPolaznici ";
-                    cmdText += "SET Ime ='" + model.Ime + "', Prezime='" + model.Prezime + "', Email='" + model.Email + "', DatumRodjenja=" + model.DatumRodjenja.ToString("yyyy-MM-dd") + " ";
-                    cmdText += "WHERE IdPolaznik=" + model.IdPolaznik;
-
-                    // Kreiramo Command objekt i otvaramo vezu s bazom
+                    string cmdText = "UPDATE tblPolaznici SET Ime = '" + model.Ime + "', Prezime = '" + model.Prezime + "', Email = '" + model.Email
+                        + "' WHERE IdPolaznik = " + model.IdPolaznik;
                     SqlCommand cmd = new SqlCommand(cmdText, conn);
                     cmd.Connection.Open();
-
-                    // kOmandu izvršavamo metodom ExecuteNonQuery
-                    // Ako je zapis upisan u bazu, baza vraća 1 (jer je upisan jedan redak)
 
                     int brojDodanihRedaka = cmd.ExecuteNonQuery();
                     if (brojDodanihRedaka > 0)
@@ -260,24 +237,24 @@ namespace ADO_NET_Komponente.Controllers
                     }
                     else
                     {
-                        ViewBag.Message = "Dogodila se greška!";
+                        ViewBag.Message = "Dogodila se graška!";
                     }
                 }
             }
             catch (Exception ex)
             {
-                ViewBag.Message = "Greška kod dohvaćanja polaznika! Opis: " + ex.Message;
+                ViewBag.Message = "Greška kod dohvaćanja opisa polaznika! Opis: " + ex.ToString();
             }
             return View(model);
         }
+        // GET: ADONETKomponente
         [HttpGet]
         public ActionResult Delete(int idPolaznik)
         {
             SqlConnection conn = new SqlConnection(connStr);
 
-            // kreiramo sql naredbu
-            string cmdText = "DELETE FROM tblPolaznici WHERE IdPolaznik= " + idPolaznik;
-            // kreiramo sqlcommand objekt
+            string cmdText = "DELETE FROM tblPolaznici WHERE IdPolaznik = " + idPolaznik;
+
             SqlCommand cmd = new SqlCommand(cmdText, conn);
 
             try
@@ -289,7 +266,7 @@ namespace ADO_NET_Komponente.Controllers
             }
             catch (Exception ex)
             {
-                ViewBag.Message = "Greška kod brisanja polaznika1 Opis: " + ex.Message;
+                ViewBag.Message = "Greška kod dohvaćanja polaznika! Opis: " + ex.Message;
             }
             finally
             {
