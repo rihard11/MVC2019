@@ -42,5 +42,13 @@ namespace WebShop.Controllers
             return RedirectToAction("Index", "WebShop", proi.ToList()); //proizvodi.ToList());
             //return View(lstProizvodi);
         }
+
+        public ActionResult RemoveFromCart(int index)
+        {
+            lstProizvodi = Session["Cart"] as List<Proizvodi>;
+            lstProizvodi.RemoveAt(index);
+            Session["Cart"] = lstProizvodi;
+            return View("Index", lstProizvodi);
+        }
     }
 }
