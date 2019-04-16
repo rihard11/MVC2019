@@ -39,7 +39,7 @@ namespace WebShop.Controllers
         {
             Narudzbe narudzba = new Narudzbe();
             narudzba.KorisnikId = korisnici.Id;
-            narudzba.DatumKreiranja =
+            narudzba.DatumKreiranja = 
                 Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             narudzba.DatumVrijemeDostave =
                 Convert.ToDateTime(DateTime.Now.AddDays(7).ToString("yyyy-MM-dd"));

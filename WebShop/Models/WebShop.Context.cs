@@ -13,10 +13,10 @@ namespace WebShop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebShopEntities : DbContext
+    public partial class WebshopEntities : DbContext
     {
-        public WebShopEntities()
-            : base("name=WebShopEntities")
+        public WebshopEntities()
+            : base("name=WebshopEntities")
         {
         }
     
@@ -32,5 +32,6 @@ namespace WebShop.Models
         public virtual DbSet<Narudzbe> Narudzbes { get; set; }
         public virtual DbSet<NarudzbeDetalji> NarudzbeDetaljis { get; set; }
         public virtual DbSet<Proizvodi> Proizvodis { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
