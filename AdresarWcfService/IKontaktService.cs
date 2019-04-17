@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdresarAdresarWcfService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,6 +13,6 @@ namespace AdresarWcfService
     public interface IKontaktService
     {
         [OperationContract]
-        void DoWork();
+        List<Kontakt> DohvatiAktivneKontakte();
     }
 }

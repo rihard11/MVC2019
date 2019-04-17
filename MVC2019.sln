@@ -22,6 +22,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO_NET_Komponente", "ADO_NET_Komponente\ADO_NET_Komponente.csproj", "{73AFA1FA-3DFB-4494-9AE3-2ECCE3657D4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adresar", "Adresar\Adresar.csproj", "{52232793-5112-4592-8B5D-DCD92601FD84}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8C77F9D3-2693-44C3-BB89-6FA8A59A7901} = {8C77F9D3-2693-44C3-BB89-6FA8A59A7901}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop", "WebShop\WebShop.csproj", "{253DA717-80D2-4660-94B9-A9E25ACC6112}"
 EndProject
