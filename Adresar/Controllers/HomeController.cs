@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Adresar.Controllers
+namespace AdresarAdresarWcfService.Controllers
 {
     public class HomeController : Controller
     {

@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Adresar.Models;
+using AdresarAdresarWcfService.Models;
 
-namespace Adresar
+namespace AdresarAdresarWcfService
 {
     public partial class Startup
     {

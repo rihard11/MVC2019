@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Adresar
+namespace AdresarAdresarWcfService
 {
     public class BundleConfig
     {

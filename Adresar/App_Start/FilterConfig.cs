@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Adresar
+namespace AdresarAdresarWcfService
 {
     public class FilterConfig
     {

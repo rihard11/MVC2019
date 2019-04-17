@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Adresar.Startup))]
-namespace Adresar
+[assembly: OwinStartupAttribute(typeof(AdresarAdresarWcfService.Startup))]
+namespace AdresarAdresarWcfService
 {
     public partial class Startup
     {

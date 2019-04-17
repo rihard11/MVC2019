@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Adresar.Models;
+using AdresarAdresarWcfService.Models;
 
-namespace Adresar.Controllers
+namespace AdresarAdresarWcfService.Controllers
 {
     [Authorize]
     public class AccountController : Controller

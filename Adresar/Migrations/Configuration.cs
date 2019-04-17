@@ -1,11 +1,11 @@
-namespace Adresar.Migrations
+namespace AdresarAdresarWcfService.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Adresar.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AdresarAdresarWcfService.Models.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Adresar.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Adresar.Models.ApplicationDbContext context)
+        protected override void Seed(AdresarAdresarWcfService.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
