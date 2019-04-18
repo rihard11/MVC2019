@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Zadnji_Ispit.Models.Poklon>
+
+<p>
+    @Html.ActionLink("Pokloni koji nisu kupljeni", "Index") |
+    @Html.ActionLink("Dodaj poklon", "DodajPoklon")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kupljeno)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cijena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kupljeno)
+        </td>
+        <td>
+            @Html.ActionLink("Uredi", "UrediPoklon", new { id=item.Id }) |
+            @Html.ActionLink("Obrisi", "Obrisi", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

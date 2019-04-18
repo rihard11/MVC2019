@@ -17,7 +17,7 @@ namespace Zadnji_Ispit.Controllers
         public ActionResult Index()
         {
             List<Poklon> lPokloni = (from p in _db.Pokloni
-                                     where p.Kupljeno == false
+                                     where p.Kupljeno == false 
                                      select p).ToList();
 
             return View(lPokloni);
@@ -30,13 +30,13 @@ namespace Zadnji_Ispit.Controllers
             return View(lPokloni);
         }
 
-        public ActionResult KreirajPoklon()
+        public ActionResult DodajPoklon()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult KreirajPoklon(Poklon poklon)
+        public ActionResult DodajPoklon(Poklon poklon)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Zadnji_Ispit.Controllers
             return View(poklon);
         }
 
-        public ActionResult Izbrisi(int? id)
+        public ActionResult Obrisi(int? id)
         {
             if (id == null)
             {
@@ -94,7 +94,7 @@ namespace Zadnji_Ispit.Controllers
             return View(poklon);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Obrisi")]
         public ActionResult DeleteConfirmed(int id)
         {
             Poklon poklon = _db.Pokloni.Find(id);

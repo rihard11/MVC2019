@@ -246,10 +246,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Ispit\Prvi.cshtml" />
+    <Content Include="Views\Poklon\DodajPoklon.cshtml" />
+    <Content Include="Views\Poklon\UrediPoklon.cshtml" />
+    <Content Include="Views\Poklon\Obrisi.cshtml" />
+    <Content Include="Views\Poklon\Index.cshtml" />
+    <Content Include="Views\Poklon\ListaPoklona.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Poklon\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
