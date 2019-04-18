@@ -11,7 +11,7 @@ namespace Zadnji_Ispit.Controllers
         // GET: Ispit
         public ActionResult Prvi()
         {
-            return View();
+            return View(DateTime.Now);
         }
     }
 }
