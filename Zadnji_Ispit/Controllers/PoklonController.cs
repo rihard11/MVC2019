@@ -42,7 +42,7 @@ namespace Zadnji_Ispit.Controllers
             {
                 _db.Pokloni.Add(poklon);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaPoklona");
             }
 
             return View(poklon);
@@ -72,7 +72,7 @@ namespace Zadnji_Ispit.Controllers
             {
                 _db.Entry(poklon).State = EntityState.Modified;
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaPoklona");
             }
 
             return View(poklon);
@@ -100,7 +100,7 @@ namespace Zadnji_Ispit.Controllers
             Poklon poklon = _db.Pokloni.Find(id);
             _db.Pokloni.Remove(poklon);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ListaPoklona");
         }
     }
 }
